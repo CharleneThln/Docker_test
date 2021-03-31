@@ -9,6 +9,9 @@ WORKDIR /laravelapp
 #copie des contenus en local dans le dossier du container docker
 COPY . /laravelapp
 
+RUN composer update
+RUN composer install 
+
 EXPOSE 8000
 
 #RUN se lance avec docker build
