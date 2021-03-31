@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: ./Backend
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./Frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: base_test
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: testeur
+      MYSQL_PASSWORD: testeur_password
+    ports:
+      - 3306:3306
+    ##############
+    volumes:
+      - mariadb:/var/www/database
+      
+##############
+volumes: 
+  mariadb:
+
