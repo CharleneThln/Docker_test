@@ -19,15 +19,15 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_DATABASE: base_test
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: testeur
-      MYSQL_PASSWORD: testeur_password
+      MYSQL_DATABASE: base_popcorn
+      MYSQL_ROOT_PASSWORD: mais
+      MYSQL_USER: popcorn
+      MYSQL_PASSWORD: mais
     ports:
       - 3306:3306
     ##############
     volumes:
-      - mariadb:/var/www/database
+      - mariadb:/database
       
 ##############
 volumes: 

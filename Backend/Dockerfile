@@ -4,10 +4,10 @@ FROM composer
 
 #COPY database /var/www/database
 
-WORKDIR /var/www/laravelapp
+WORKDIR /laravelapp
 
 #copie des contenus en local dans le dossier du container docker
-COPY . /var/www/laravelapp
+COPY . /laravelapp
 
 EXPOSE 8000
 
